@@ -1,0 +1,12 @@
+<template name="businessList">
+  <div class = "post page">
+  {{#if currentUser}}
+    {{#each business}}
+       {{> businessItem}}
+    {{/each}}
+  {{else}}
+      {{> index}}
+  {{/if}}
+    
+  </div>
+</template>
