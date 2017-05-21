@@ -1,12 +1,12 @@
 <template name="businessPage">
   <div class="post-page page">
-  {{#if currentUser}}
-      {{> itemSubmit}}
+    <ul class="post page">
+    <h3>Current Menu</h3>
+    {{#if currentUser}}
+      <a href = "#" id = "add" class = "btn btn-warning">Add Item</a>
     {{else}}
       <p>Please log in to add to the menu.</p>
     {{/if}}
-    <ul class="post page">
-    <h3>Current Menu</h3>
     <hr>
       {{#each menu}}
         {{> menuItem}}

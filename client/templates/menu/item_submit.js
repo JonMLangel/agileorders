@@ -22,7 +22,7 @@ Template.itemSubmit.events({
       item: $item.val(),
       itemPrice: Number($itemPrice.val()),
       itemDescription: $itemDescription.val(),
-      businessId: template.data._id
+      businessId: Router.current().params._id
     };
     
     var errors = {};
@@ -38,6 +38,7 @@ Template.itemSubmit.events({
         $item.val('');
         $itemPrice.val('');
         $itemDescription.val('');
+        history.back();
       }
     });
   }
