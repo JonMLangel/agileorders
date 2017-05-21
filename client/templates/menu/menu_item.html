@@ -8,7 +8,11 @@
         {{#if isOwner}}
           <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
         {{else}}
-          <p>Please log in to edit the menu.</p>
+          {{#if currentUser}}
+            <p class= "discuss">Not authorized to edit item</p>
+          {{else}}
+            <p class ="discuss">Please log in to edit the item.</p>
+          {{/if}}
         {{/if}}
       <p>{{itemDescription}}</p>
       <p>Image not yet added</p>

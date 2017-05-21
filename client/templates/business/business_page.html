@@ -5,7 +5,11 @@
     {{#if isOwner}}
       <a href = "#" id = "add" class = "btn btn-warning">Add Item</a>
     {{else}}
-      <p>Please log in to add to the menu.</p>
+      {{#if currentUser}}
+        <p>Not authorized to add to menu</p>
+      {{else}}
+        <p>Please log in to add to the menu.</p>
+      {{/if}}
     {{/if}}
     <hr>
       {{#each menu}}
