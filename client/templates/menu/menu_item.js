@@ -1,5 +1,5 @@
-// Template.menuItem.helpers({
-//   submittedText: function() {
-//     return this.submitted.toString();
-//   }
-// });
+Template.menuItem.helpers({
+  isOwner: function() {
+    	return this.userId == Meteor.userId();
+  }
+});
