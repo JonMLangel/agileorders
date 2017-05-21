@@ -1,10 +1,3 @@
-Template.itemEdit.selected = function(itemType) {
-    if (itemType == currentItemType)
-        { return "selected ";}
-    else 
-        { return "";}
-};
-
 Template.itemEdit.events({
   'submit form': function(e) {
     e.preventDefault();
