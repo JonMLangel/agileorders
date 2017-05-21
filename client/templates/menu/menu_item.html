@@ -5,7 +5,11 @@
       <span class="date">${{itemPrice}}</span>
     </h4>
     <div class ="post">
-      <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
+        {{#if ownsDocuments}}
+          <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
+        {{else}}
+          <p>Please log in to edit the menu.</p>
+        {{/if}}
       <p>{{itemDescription}}</p>
       <p>Image not yet added</p>
     </div>
