@@ -1,7 +1,7 @@
 <template name="businessPage">
   <div class="post-page page">
     <ul class="post page">
-    <h3>Current Menu</h3>
+    <h2>Current Menu</h2>
     {{#if isOwner}}
       <a href = "#" id = "add" class = "btn btn-warning">Add Item</a>
     {{else}}
@@ -12,9 +12,48 @@
       {{/if}}
     {{/if}}
     <hr>
-      {{#each menu}}
-        {{> menuItem}}
-      {{/each}}
+      {{#if appetizers.count !=0}}
+        <h2>Appetizers</h2>
+          {{#each appetizers}}
+            {{>menuItem}}
+          {{/each}}
+          <hr>
+      {{/if}}
+      {{#if meals.count !=0}}
+        <h2>Meals</h2>
+          {{#each meals}}
+            {{>menuItem}}
+          {{/each}}
+          <hr>
+      {{/if}}
+      {{#if entress.count !=0}}
+        <h2>Entress</h2>
+        {{#each entrees}}
+          {{>menuItem}}
+        {{/each}}
+        <hr>
+      {{/if}}
+      {{#if sides.count !=0}}
+        <h2>Sides</h2>
+        {{#each sides}}
+          {{>menuItem}}
+        {{/each}}
+        <hr>
+      {{/if}}
+      {{#if drinks.count !=0}}
+        <h2>Drinks</h2>
+        {{#each drinks}}
+          {{>menuItem}}
+        {{/each}}
+        <hr>
+      {{/if}}
+      {{#if desserts.count !=0}}
+        <h2>Desserts</h2>
+        {{#each desserts}}
+          {{>menuItem}}
+        {{/each}}
+        <hr>
+      {{/if}}
     </ul>
   </div>
 </template>
