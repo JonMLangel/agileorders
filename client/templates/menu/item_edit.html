@@ -18,6 +18,20 @@
           <input name="itemDescription" id="itemDescription" type="text" value="{{itemDescription}}" class="form-control"/>
       </div>
     </div>
+    <div class="form-group">
+      <label class="control-label" for="city">Item Type</label>
+      <div class="controls">
+          <select name="itemType" class="form-control">
+                <option value="{{itemType}}">{{itemType}}</option>
+                <option value="Appetizer">Appetizer</option>
+                <option value="Meal">Meal</option>
+                <option value="Entree">Entree</option>
+                <option value="Side">Side</option>
+                <option value="Drink">Drink</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+      </div>
+    </div>
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
     <hr/>
     <a class="btn btn-danger delete" href="#">Delete item</a>

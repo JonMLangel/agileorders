@@ -18,10 +18,12 @@ Template.itemSubmit.events({
     var $item = $(e.target).find('[name=item]');
     var $itemPrice = $(e.target).find('[name=itemPrice]');
     var $itemDescription = $(e.target).find('[name=itemDescription]');
+    var $itemType = $(e.target).find('[name=itemType]');
     var item = {
       item: $item.val(),
       itemPrice: Number($itemPrice.val()),
       itemDescription: $itemDescription.val(),
+      itemType: $itemType.val(),
       businessId: Router.current().params._id
     };
     

@@ -1,3 +1,10 @@
+Template.itemEdit.selected = function(itemType) {
+    if (itemType == currentItemType)
+        { return "selected ";}
+    else 
+        { return "";}
+};
+
 Template.itemEdit.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -8,7 +15,8 @@ Template.itemEdit.events({
     var item = {
       item: $(e.target).find('[name=item]').val(),
       itemPrice: Number(price),
-      itemDescription: $(e.target).find('[name=itemDescription]').val()
+      itemDescription: $(e.target).find('[name=itemDescription]').val(),
+      itemType: $(e.target).find('[name=itemType]').val()
     };
     
     Menu.update(currentItemId, {$set: item}, function(error) {
