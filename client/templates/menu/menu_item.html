@@ -2,9 +2,13 @@
   <li>
     <h4>
       <span class="author">{{item}}</span>
-      <span class="date">{{itemPrice}}</span>
+      <span class="date">${{itemPrice}}</span>
     </h4>
-    <p>{{itemDescription}}</p>
-    <p>Image not yet added</p>
+    <div class ="post">
+      <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
+      <p>{{itemDescription}}</p>
+      <p>Image not yet added</p>
+    </div>
   </li>
+  <hr>
 </template>

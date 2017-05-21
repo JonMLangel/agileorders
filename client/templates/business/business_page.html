@@ -1,15 +1,16 @@
 <template name="businessPage">
   <div class="post-page page">
-    {{> businessItem}}
-    <ul class="comments">
-      {{#each menu}}
-        {{> menuItem}}
-      {{/each}}
-    </ul>
-    {{#if currentUser}}
+  {{#if currentUser}}
       {{> itemSubmit}}
     {{else}}
       <p>Please log in to add to the menu.</p>
     {{/if}}
+    <ul class="post page">
+    <h3>Current Menu</h3>
+    <hr>
+      {{#each menu}}
+        {{> menuItem}}
+      {{/each}}
+    </ul>
   </div>
 </template>

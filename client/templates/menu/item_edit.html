@@ -1,0 +1,25 @@
+<template name="itemEdit">
+  <form class="main form page">
+    <div class="form-group">
+      <label class="control-label" for="item">Item</label>
+      <div class="controls">
+          <input name="item" id="item" type="text" value="{{item}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="title">Item Price</label>
+      <div class="controls">
+           <input name="itemPrice" id="itemPrice" type="text" value="{{itemPrice}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="city">Item Description</label>
+      <div class="controls">
+          <input name="itemDescription" id="itemDescription" type="text" value="{{itemDescription}}" class="form-control"/>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete item</a>
+  </form>
+</template>
