@@ -1,8 +1,8 @@
 <template name="menuItem">
   <li>
     <h4>
-      <span class="author">{{item}}</span>
-      <span class="date">${{itemPrice}}</span>
+      <p class="author">{{item}}</p>
+      <p class="date">Price: ${{itemPrice}}</p>
     </h4>
     <div class ="post">
         {{#if isOwner}}
@@ -14,8 +14,7 @@
             <p class ="discuss">Please log in to edit the item.</p>
           {{/if}}
         {{/if}}
-      <p>{{itemDescription}}</p>
-      <p>{{itemType}}</p>
+      <p>Item Description: {{itemDescription}}</p>
       <p>Image not yet added</p>
     </div>
   </li>

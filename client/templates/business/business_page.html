@@ -11,48 +11,72 @@
         <p>Please log in to add to the menu.</p>
       {{/if}}
     {{/if}}
-    <hr>
+    
       {{#if appetizers.count !=0}}
+      <div class = "container">
         <h2>Appetizers</h2>
           {{#each appetizers}}
+          <div class = "col-sm-5">
             {{>menuItem}}
+          </div> 
           {{/each}}
-          <hr>
+          
+       </div>   
       {{/if}}
       {{#if meals.count !=0}}
+      <div class = "container">
         <h2>Meals</h2>
           {{#each meals}}
+          <div class = "col-sm-5">
             {{>menuItem}}
+          </div>  
           {{/each}}
-          <hr>
+          
+      </div>
       {{/if}}
       {{#if entrees.count !=0}}
-        <h2>Entress</h2>
+      <div class = "container">
+        <h2>Entrees</h2>
         {{#each entrees}}
+        <div class = "col-sm-5">
           {{>menuItem}}
+        </div>
         {{/each}}
-        <hr>
+        
+       </div> 
       {{/if}}
       {{#if sides.count !=0}}
+      <div class = "container">
         <h2>Sides</h2>
         {{#each sides}}
+        <div class = "col-sm-6">
           {{>menuItem}}
+        </div>  
         {{/each}}
-        <hr>
+        
+      </div>  
       {{/if}}
       {{#if drinks.count !=0}}
+      <div class = "container">
         <h2>Drinks</h2>
         {{#each drinks}}
+        <div class = "col-sm-5">
           {{>menuItem}}
+        </div>  
         {{/each}}
-        <hr>
+        
+       </div> 
       {{/if}}
       {{#if desserts.count !=0}}
+      <div class = "container">
         <h2>Desserts</h2>
         {{#each desserts}}
+        <div class = "col-sm-5">
           {{>menuItem}}
+        </div>  
         {{/each}}
-        <hr>
+        
+      </div> 
       {{/if}}
     </ul>
   </div>
