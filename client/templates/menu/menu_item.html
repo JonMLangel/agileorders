@@ -9,9 +9,9 @@
           <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
         {{else}}
           {{#if currentUser}}
-            <p class= "discuss">Not authorized to edit item</p>
+            <a href="#" id = "buy" class="discuss btn btn-primary">Buy Item</a>
           {{else}}
-            <p class ="discuss">Please log in to edit the item.</p>
+            <p class ="discuss">Please log in</p>
           {{/if}}
         {{/if}}
       <p>Item Description: {{itemDescription}}</p>
