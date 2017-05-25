@@ -26,3 +26,5 @@ accounts-password
 check
 audit-argument-checks
 mrgalaxy:stripe
+aldeed:simple-schema
+aldeed:collection2
