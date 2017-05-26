@@ -10,6 +10,8 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/reactive-dict/1.1.8/web.browser/reactive-dict.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/diff-sequence/1.0.7/web.browser/diff.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/patrickml_swal/1.0.0/web.browser/packages/patrickml_swal/lib/client/sweetalert2.css" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/patrickml_swal/1.0.0/web.browser/packages/patrickml_swal.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/optimizer.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/codegen.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/templatetag.js" />
@@ -272,6 +274,8 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/reactive-dict/1.1.8/web.browser/reactive-dict.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/diff-sequence/1.0.7/web.browser/diff.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/mongo-id/1.0.6/web.browser/id.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/patrickml_swal/1.0.0/web.browser/packages/patrickml_swal/lib/client/sweetalert2.css" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/patrickml_swal/1.0.0/web.browser/packages/patrickml_swal.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/optimizer.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/codegen.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/spacebars-compiler/1.1.2/web.browser/templatetag.js" />

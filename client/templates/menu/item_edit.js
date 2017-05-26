@@ -24,11 +24,22 @@ Template.itemEdit.events({
   
   'click .delete': function(e) {
     e.preventDefault();
-    
-    if (confirm("Delete this item?")) {
-      var currentItemId = this._id;
+    let currentItemId = this._id;
+    swal({
+        title:"Are you sure you want to delete this?",
+        text: "This will delete your menu item",
+        showCancelButton: true,
+        confirmButtonColor: '#dd6b55',
+        cancelButtonColor: '#d44',
+        confirmButtonText: "Yes, delete item!",
+        cancelButtonText: 'Cancel'
+    }, function() {
+        swal(
+            'Deleted!'
+        )
+        console.log("currentItemId", currentItemId)
       Menu.remove(currentItemId);
-      history.back();
-    }
+      history.back(); //TODO once we have user roles, we should make this a direct Router.go to /manage/:id where id is business 2017-05-25 JL
+    })
   }
 });
