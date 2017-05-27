@@ -1,0 +1,63 @@
+<template name="businessEdit">
+  <form class="main form page">
+    <div class="form-group {{errorClass 'name'}}">
+      <label class="control-label" for="url">Business Name</label>
+      <div class="controls">
+          <input name="name" id="name" type="text" value="{{name}}" class="form-control"/>
+          <span class="help-block">{{errorMessage 'name'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'address'}}">
+      <label class="control-label" for="title">Street Address</label>
+      <div class="controls">
+          <input name="address" id="address" type="text" value="{{address}}" class="form-control"/>
+          <span class="help-block">{{errorMessage 'address'}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="city">City</label>
+      <div class="controls">
+          <input name="city" id="city" type="text" value="{{city}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="state">State</label>
+      <div class="controls">
+          <input name="state" id="state" type="text" value="{{state}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="zip">Zip code</label>
+      <div class="controls">
+          <input name="zip" id="zip" type="text" value="{{zip}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="phone">Phone Number</label>
+      <div class="controls">
+          <input name="phone" id="phone" type="text" value="{{phone}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="hours">Hours</label>
+      <div class="controls">
+          <input name="hours" id="hours" type="text" value="{{hours}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="range">Delivery Range</label>
+      <div class="controls">
+          <input name="deliveryRange" id="deliveryRange" type="text" value="{{deliveryRange}}" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="charge">Delivery Charge</label>
+      <div class="controls">
+          <input name="deliveryCharge" id="deliveryCharge" type="text" value="{{deliveryCharge}}" class="form-control"/>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete post</a>
+  </form>
+</template>

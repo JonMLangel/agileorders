@@ -1,0 +1,15 @@
+<template name="businessItem">
+  <div class = "post">
+    <div class = "post-content">
+      <h3>{{name}}</h3>
+      <p>Hours: {{hours}}</p>
+      <p>{{address}} {{city}}, {{state}} {{zip}}</p>
+      <p>Delivery Range: {{deliveryRange}}</p>
+      <p>Delivery Charge: ${{deliveryCharge}}</p>
+      <p>Phone: {{phone}}</p>
+    </div>
+    <!-- <a class ="discuss btn btn-warning" href="{{pathFor 'businessEdit'}}">Edit</a> -->
+    {{#if ownPost}}<a href="{{pathFor 'businessPage'}}" class="discuss btn btn-primary">Manage Store</a>{{/if}}
+    {{#if ownPost}}<a href="{{pathFor 'businessEdit'}}" class="discuss btn btn-warning">Edit Store info</a>{{/if}}
+  </div>
+</template>

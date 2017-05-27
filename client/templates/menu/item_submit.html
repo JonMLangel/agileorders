@@ -1,0 +1,14 @@
+<template name="itemSubmit">
+  <form name="comment" class="comment-form form">
+    <div class="form-group {{errorClass 'body'}}">
+        <div class="controls">
+            <label for="body">Add an item to the menu</label>
+            <input name="item" id="item" type="text" placeholder="Item name" class="form-control"/>
+            <input name="itemPrice" id="itemPrice" type="text" placeholder="Item Price" class="form-control"/>
+            <input name="itemDescription" id="itemDescription" type="text" placeholder="Item Description" class="form-control"/>
+            <span class="help-block">{{errorMessage 'body'}}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </form>
+</template>
