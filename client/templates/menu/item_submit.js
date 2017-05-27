@@ -18,11 +18,13 @@ Template.itemSubmit.events({
     var $item = $(e.target).find('[name=item]');
     var $itemPrice = $(e.target).find('[name=itemPrice]');
     var $itemDescription = $(e.target).find('[name=itemDescription]');
+    var $itemType = $(e.target).find('[name=itemType]');
     var item = {
       item: $item.val(),
       itemPrice: Number($itemPrice.val()),
       itemDescription: $itemDescription.val(),
-      businessId: template.data._id
+      itemType: $itemType.val(),
+      businessId: Router.current().params._id
     };
     
     var errors = {};
@@ -38,6 +40,7 @@ Template.itemSubmit.events({
         $item.val('');
         $itemPrice.val('');
         $itemDescription.val('');
+        history.back();
       }
     });
   }

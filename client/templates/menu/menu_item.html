@@ -1,10 +1,22 @@
 <template name="menuItem">
   <li>
     <h4>
-      <span class="author">{{item}}</span>
-      <span class="date">{{itemPrice}}</span>
+      <p class="author">{{item}}</p>
+      <p class="date">Price: ${{itemPrice}}</p>
     </h4>
-    <p>{{itemDescription}}</p>
-    <p>Image not yet added</p>
+    <div class ="post">
+        {{#if isOwner}}
+          <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
+        {{else}}
+          {{#if currentUser}}
+            <a href="#" id = "buy" class="discuss btn btn-primary">Buy Item</a>
+          {{else}}
+            <p class ="discuss">Please log in</p>
+          {{/if}}
+        {{/if}}
+      <p>Item Description: {{itemDescription}}</p>
+      <p>Image not yet added</p>
+    </div>
   </li>
+  <hr>
 </template>

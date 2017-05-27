@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/lib/collections/shopping_cart/shopping_carts.js" />
+        <item url="file://$PROJECT_DIR$/lib/collections/_schemas/_init/_init.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/collections/shopping_cart/shopping_carts.js" />
+      <root url="file://$PROJECT_DIR$/lib/collections/_schemas/_init/_init.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
