@@ -1,17 +1,7 @@
-<template name="businessPage">
+<template name="orderPage">
   <div class="post-page page">
     <div class="post page">
-    <h2>Current Menu</h2>
-    {{#if isOwner}}
-      <a href = "#" id = "add" class = "btn btn-warning">Add Item</a>
-    {{else}}
-      {{#if currentUser}}
-        <p>Not authorized to add to menu</p>
-      {{else}}
-        <p>Please log in to add to the menu.</p>
-      {{/if}}
-    {{/if}}
-    
+    <h2>{{name}} Menu</h2>
       {{#if appetizers.count !=0}}
       <div class = "container">
         <h2>Appetizers</h2>
@@ -31,7 +21,6 @@
             {{>menuItem}}
           </div>  
           {{/each}}
-          
       </div>
       {{/if}}
       {{#if entrees.count !=0}}

@@ -1,0 +1,13 @@
+<template name="store">
+  <div class = "post">
+    <div class = "post-content">
+      <h3>{{name}}</h3>
+      <p>Hours: {{hours}}</p>
+      <p>{{address}} {{city}}, {{state}} {{zip}}</p>
+      <p>Delivery Range: {{deliveryRange}}</p>
+      <p>Delivery Charge: ${{deliveryCharge}}</p>
+      <p>Phone: {{phone}}</p>
+    </div>
+    <a href="{{pathFor 'orderPage'}}" class="discuss btn btn-primary">Order</a>
+  </div>
+</template>
