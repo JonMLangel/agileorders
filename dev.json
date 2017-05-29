@@ -9,9 +9,8 @@
         },
         "limit": 1,
         "interval": "month"
-      },
+      }
     ],
-  "public": {
     "key": "value",
 		"stripe": "pk_test_QvJfrxNDvtPAlgslpArtmEHw"
   },
