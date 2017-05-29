@@ -1,5 +1,17 @@
 {
   "public": {
+    "plans": [
+      {
+        "name": "Business",
+        "amount": {
+          "cents": 6000,
+          "usd": "$60"
+        },
+        "limit": 1,
+        "interval": "month"
+      },
+    ],
+  "public": {
     "key": "value",
 		"stripe": "pk_test_QvJfrxNDvtPAlgslpArtmEHw"
   },
