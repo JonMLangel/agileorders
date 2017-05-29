@@ -1,5 +1,5 @@
 let Stripe = StripeAPI( Meteor.settings.private.stripe );
-
+var Future = Npm.require('fibers/future');
 Meteor.methods({
   processPayment( charge ) {
     check( charge, {
@@ -17,15 +17,16 @@ Meteor.methods({
   },
 
   stripeCreateCustomer: function(token, email){
-      // TODO check() both of our arguments here, but I've stripped this out for the sake of brevity. 2017-05-29 JL
-
+      check(token, String);
+      check(email, String);
       var stripeCustomer = new Future();
-
+     
       Stripe.customers.create({
           source: token,
           email: email
       }, function(error, customer){
           if (error){
+              console.log("error creating customer", error)
               stripeCustomer.return(error);
           } else {
               stripeCustomer.return(customer);
@@ -36,14 +37,16 @@ Meteor.methods({
   },
 
   stripeCreateSubscription: function(customer, plan){
-      // TODO check() both of our arguments here, but I've stripped this out for the sake of brevity. 2017-05-29 JL
-
+      console.log("plan name", plan);
+      check(customer, String);
+      check(plan, String);
       var stripeSubscription = new Future();
 
       Stripe.customers.createSubscription(customer, {
           plan: plan
       }, function(error, subscription){
           if (error) {
+              console.log("error creating subscription", error);
               stripeSubscription.return(error);
           } else {
               stripeSubscription.return(subscription);
