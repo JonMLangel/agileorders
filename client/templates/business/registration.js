@@ -2,7 +2,6 @@
 //  * Created by jon on 5/29/17.
 //  */
 Template.registration.onRendered(function() {
-    console.log("validating form");
     $('#application-signup').validate({
         rules: {
             name: {
@@ -48,35 +47,33 @@ Template.registration.onRendered(function() {
                     deliveryCharge: Number(charge),
                     hours: $('[name=hours]').val()
                 };
+                var errors = validateRegistration(business);
+                    if (errors.name|| errors.address)
+                        return Session.set('registrationErrors', errors);
+
+                    Meteor.call('businessInsert', business, function(error, result) {
+                    // display the error to the user and abort
+                    if (error)
+                     return throwError(error.reason);
+
+                    if (result.businessExists)
+                     throwError('This business has already been registered');
+
+                 Router.go('businessPage', {_id: result._id});
+                    });
+
                 Meteor.call('createTrialCustomer', customer, function (error, response) {
 
                     if (error) {
                         alert(error.reason);
-                        submitButton.button('reset');
                     } else {
                         if (response.error) {
                             alert(response.message);
-                            submitButton.button('reset');
                         } else {
-                            // TODO figure out what to put here
+                            console.log(response);
                         }
                     }
                 });
-                var errors = validateRegistration(business);
-        if (errors.name|| errors.address)
-                return Session.set('registrationErrors', errors);
-
-                Meteor.call('businessInsert', business, function(error, result) {
-                  // display the error to the user and abort
-                  if (error)
-                    return throwError(error.reason);
-
-                  if (result.businessExists)
-                    throwError('This business has already been registered');
-
-                  
-                });
-                Router.go('businessPage', {_id: result._id});
             });
         }
     });
