@@ -30,15 +30,7 @@ Meteor.methods({
                             console.log(error);
                         } else {
                             try {
-                                // var user = Accounts.createUser({
-                                //     email: customer.emailAddress,
-                                //     password: customer.password,
-                                //     profile: {
-                                //         name: customer.name,
-                                //     }
-                                // });
-                                
-                                // console.log("user", user)
+                                var user = Meteor.user();
                                 var subscription = {
                                     customerId: customerId,
                                     subscription: {
@@ -57,15 +49,15 @@ Meteor.methods({
                                 }
                                 console.log("subscription", subscription)
 
-                                // Meteor.users.update(user, {
-                                //     $set: subscription
-                                // }, function(error, response){
-                                //     if (error){
-                                //         console.log(error);
-                                //     } else {
-                                //         newCustomer.return(user);
-                                //     }
-                                // });
+                                Meteor.users.update(user, {
+                                    $set: subscription
+                                }, function(error, response){
+                                    if (error){
+                                        console.log(error);
+                                    } else {
+                                        newCustomer.return(user);
+                                    }
+                                });
                             } catch(exception) {
                                 newCustomer.return(exception);
                             }
