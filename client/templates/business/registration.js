@@ -48,19 +48,8 @@ Template.registration.onRendered(function() {
                     hours: $('[name=hours]').val()
                 };
                 var errors = validateRegistration(business);
-                    if (errors.name|| errors.address)
-                        return Session.set('registrationErrors', errors);
-
-                    Meteor.call('businessInsert', business, function(error, result) {
-                    // display the error to the user and abort
-                    if (error)
-                     return throwError(error.reason);
-
-                    if (result.businessExists)
-                     throwError('This business has already been registered');
-
-                 Router.go('businessPage', {_id: result._id});
-                    });
+                            if (errors.name|| errors.address)
+                                return Session.set('registrationErrors', errors);
 
                 Meteor.call('createTrialCustomer', customer, function (error, response) {
 
@@ -70,7 +59,16 @@ Template.registration.onRendered(function() {
                         if (response.error) {
                             alert(response.message);
                         } else {
-                            return response;
+                            Meteor.call('businessInsert', business, function(error, result) {
+                            // display the error to the user and abort
+                            if (error)
+                                return throwError(error.reason);
+
+                            if (result.businessExists)
+                                throwError('This business has already been registered');
+
+                            Router.go('businessPage', {_id: result._id});
+                            });
                         }
                     }
                 });
