@@ -12,8 +12,10 @@ Meteor.methods({
             token: String
         });
         var emailRegex     = new RegExp(customer.emailAddress, "i");
-        var lookupCustomer = Meteor.users.findOne({"emails.address": emailRegex});
-        if ( !lookupCustomer ) {
+        //var lookupCustomer = Meteor.users.findOne({"emails.address": emailRegex});
+        var businessEmail = Business.findOne({emailAddress: emailRegex}); 
+        //checking if email is associated with a business
+        if ( !businessEmail ) {
             var newCustomer = new Future();
             Meteor.call('stripeCreateCustomer', customer.token, customer.emailAddress, function(error, stripeCustomer){
                 console.log("in stripeCreateCustomer")
@@ -23,6 +25,8 @@ Meteor.methods({
                 } else {
                     var customerId = stripeCustomer.id;
                     var plan       = customer.plan;
+
+                    console.log("customer created");
 
                     Meteor.call('stripeCreateSubscription', customerId, plan, function(error, response){
                         console.log("in stripeCreateSubscription")

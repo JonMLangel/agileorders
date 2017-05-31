@@ -38,6 +38,7 @@ Template.registration.onRendered(function() {
                 var charge = $('[name=deliveryCharge]').val();
                 var business = {
                     name: $('[name=name]').val(),
+                    emailAddress: $('[name=emailAddress]').val(),
                     address: $('[name=address]').val(),
                     phone: $('[name=phone]').val(),
                     city: $('[name=city]').val(),
@@ -66,7 +67,7 @@ Template.registration.onRendered(function() {
 
                             if (result.businessExists)
                                 throwError('This business has already been registered');
-
+                            console.log("business inserted ", result);
                             Router.go('businessPage', {_id: result._id});
                             });
                         }
