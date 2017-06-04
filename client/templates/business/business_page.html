@@ -4,6 +4,7 @@
     <h2>Current Menu</h2>
     {{#if isOwner}}
       <a href = "#" id = "add" class = "btn btn-warning">Add Item</a>
+      {{#if plan}}<a class = "btn btn-primary" href="{{pathFor 'billingOverview'}}">Billing Overview</a>{{/if}}
     {{else}}
       {{#if currentUser}}
         <p>Not authorized to add to menu</p>

@@ -67,7 +67,6 @@ Template.registration.onRendered(function() {
 
                             if (result.businessExists)
                                 throwError('This business has already been registered');
-                            console.log("business inserted ", result);
                             Router.go('businessPage', {_id: result._id});
                             });
                         }
