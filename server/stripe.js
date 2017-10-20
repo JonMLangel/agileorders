@@ -1,4 +1,4 @@
-let Stripe = StripeAPI( Meteor.settings.private.stripe );
+// let Stripe = StripeAPI( Meteor.settings.private.stripe ); # there is not private object in meteor.settings. #JL 2017-10-20
 
 Meteor.methods({
   processPayment( charge ) {
