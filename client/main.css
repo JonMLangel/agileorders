@@ -37,8 +37,8 @@ font-family: sans-serif;
 .navbar {
   margin-bottom: 10px; }
   /* line 32, ../sass/style.scss */
-  .navbar .navbar-inner {
-    border-radius: 0px 0px 3px 3px; }
+  /*.navbar .navbar-inner {*/
+    /*border-radius: 0px 0px 3px 3px; }*/
 
 #spinner {
   height: 300px; }
