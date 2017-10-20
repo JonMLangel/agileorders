@@ -1,12 +1,15 @@
 <template name="businessList">
-  <div class = "post page">
+  <div>
   {{#if currentUser}}
-    {{#each business}}
-       {{> businessItem}}
-    {{/each}}
+    {{#if isInRole 'business'}}
+      {{#each business}}
+         {{> businessItem}}
+      {{/each}}
+    {{else}}
+      {{> customerLanding}}
+    {{/if}}
   {{else}}
-      {{> index}}
+    {{> index}}
   {{/if}}
-    
   </div>
 </template>

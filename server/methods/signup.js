@@ -8,26 +8,25 @@ Meteor.methods({
         check(customer, {
             name: String,
             emailAddress: String,
-            password: String,
             plan: String,
             token: String
         });
-
         var emailRegex     = new RegExp(customer.emailAddress, "i");
-        var lookupCustomer = Meteor.users.findOne({"emails.address": emailRegex});
-
-        if ( !lookupCustomer ) {
-            var newCustomer  = new Future();
-            console.log("newCustomer 1 ", newCustomer)
+        //var lookupCustomer = Meteor.users.findOne({"emails.address": emailRegex});
+        var businessEmail = Business.findOne({emailAddress: emailRegex});
+        //checking if email is associated with a business
+        if ( !businessEmail ) {
+            var newCustomer = new Future();
             Meteor.call('stripeCreateCustomer', customer.token, customer.emailAddress, function(error, stripeCustomer){
                 console.log("in stripeCreateCustomer")
-                console.log("newCustomer 2 ", newCustomer)
 
                 if (error) {
                     console.log(error);
                 } else {
-                    var customerId = stripeCustomer.id,
-                        plan       = customer.plan;
+                    var customerId = stripeCustomer.id;
+                    var plan       = customer.plan;
+
+                    console.log("customer created");
 
                     Meteor.call('stripeCreateSubscription', customerId, plan, function(error, response){
                         console.log("in stripeCreateSubscription")
@@ -35,15 +34,7 @@ Meteor.methods({
                             console.log(error);
                         } else {
                             try {
-                                var user = Accounts.createUser({
-                                    email: customer.emailAddress,
-                                    password: customer.password,
-                                    profile: {
-                                        name: customer.name,
-                                    }
-                                });
-                                console.log("newCustomer 3", newCustomer)
-                                console.log("user", user)
+                                var user = Meteor.user();
                                 var subscription = {
                                     customerId: customerId,
                                     subscription: {
@@ -60,7 +51,6 @@ Meteor.methods({
                                         }
                                     }
                                 }
-                                console.log("newCustomer 4 ", newCustomer)
                                 console.log("subscription", subscription)
 
                                 Meteor.users.update(user, {
@@ -79,7 +69,6 @@ Meteor.methods({
                     });
                 }
             });
-            console.log("newCustomer 5 ", newCustomer)
             return newCustomer.wait();
         } else {
             throw new Meteor.Error('customer-exists', 'Sorry, that customer email already exists!');

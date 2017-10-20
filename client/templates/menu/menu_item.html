@@ -1,10 +1,9 @@
 <template name="menuItem">
-  <li>
+    <div class ="post">
     <h4>
       <p class="author">{{item}}</p>
       <p class="date">Price: ${{itemPrice}}</p>
     </h4>
-    <div class ="post">
         {{#if isOwner}}
           <a href="{{pathFor 'itemEdit'}}" class="discuss btn btn-success">Edit Item</a>
         {{else}}
@@ -17,6 +16,5 @@
       <p>Item Description: {{itemDescription}}</p>
       <p>Image not yet added</p>
     </div>
-  </li>
   <hr>
 </template>
